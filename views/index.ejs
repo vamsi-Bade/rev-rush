@@ -1,133 +1,161 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
-    <meta charset="utf-8">
-    <title>fifa</title>
-    <link rel="stylesheet" href="index.css">
+    <meta charset="utf-8" />
+    <title>Rev Rush</title>
+    <link rel="stylesheet" href="index.css" />
     <script src="https://kit.fontawesome.com/c939d0e917.js"></script>
     <script src="index.js" defer></script>
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Comfortaa&family=Rubik&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Comfortaa&family=Rubik&display=swap"
+      rel="stylesheet"
+    />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/particlesjs/2.2.2/particles.min.js"></script>
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Baloo+Bhaijaan+2&family=Comfortaa&family=Karla:ital,wght@1,300&family=Lato&family=Rubik&family=Ubuntu&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Baloo+Bhaijaan+2&family=Comfortaa&family=Karla:ital,wght@1,300&family=Lato&family=Rubik&family=Ubuntu&display=swap"
+      rel="stylesheet"
+    />
   </head>
-<body>
+  <body>
     <canvas class="background"></canvas>
-  <div class="top">
-    <div class="main_block">
-      <div class="block">
-        <h1>Rendezvous</h1>
+    <div class="top">
+      <div class="main_block">
+        <div class="block">
+          <h1>Rev Rush</h1>
+        </div>
+        <div class="block1">
+          <h1>
+            Free browser based real-time video calls.<br />Simple, Secure, Fast.
+          </h1>
+        </div>
+        <div class="block2">
+          <h1>
+            Start your next video call with a single click. No download, plug-in
+            or login required. Just get straight to talking, messaging and
+            sharing your screen.
+          </h1>
+        </div>
       </div>
-      <div class="block1">
-        <h1>Free browser based real-time video calls.<br>Simple, Secure, Fast.</h1>
+      <img class="R" src="logo.png" alt="" />
+    </div>
+    <form autocomplete="off" action="/room" method="GET">
+      <div class="card">
+        <div class="card1">
+          <h2>Start a Meeting</h2>
+        </div>
+        <div class="label">
+          <label for="">Name</label>
+        </div>
+        <div>
+          <input class="search" type="text" name="name" value="" />
+        </div>
+        <div class="button">
+          <button class="button1">Join</button>
+        </div>
       </div>
-      <div class="block2">
-        <h1>Start your next video call with a single click. No download, plug-in or login required. Just get straight to talking, messaging and sharing your screen.</h1>
+    </form>
+    <form autocomplete="off" action="/room" method="GET">
+      <div class="card2">
+        <div class="card3">
+          <h2>Join a Meeting</h2>
+        </div>
+        <div class="label1">
+          <label for="">Name</label>
+        </div>
+        <div>
+          <input class="search1" type="text" name="name" value="" />
+        </div>
+        <div class="label2">
+          <label for="">Room Id</label>
+        </div>
+        <div>
+          <input class="search2" type="text" name="roomid" value="" />
+        </div>
+        <div class="button">
+          <button class="button2">Join</button>
+        </div>
       </div>
-    </div>
-    <img class="R" src="logo.png" alt="">
-  </div>
-  <form autocomplete="off" action="/room" method="GET">
-  <div class="card">
-    <div class="card1">
-      <h2>Start a Meeting</h2>
-    </div>
-    <div class="label">
-        <label for="">Name</label>
-    </div>
-    <div >
-      <input class="search" type="text" name="name" value="" >
-    </div>
-    <div class="button">
-      <button class="button1">Join</button>
-    </div>
-  </div>
-  </form>
-  <form autocomplete="off" action="/room" method="GET">
-   <div class="card2">
-    <div class="card3">
-      <h2>Join a Meeting</h2>
-    </div>
-    <div class="label1">
-        <label for="">Name</label>
-    </div>
-    <div >
-      <input class="search1" type="text" name="name" value="">
-    </div>
-    <div class="label2">
-        <label for="">Room Id</label>
-    </div>
-    <div >
-        <input class="search2" type="text" name="roomid" value="">
-      </div>
-    <div class="button">
-      <button class="button2">Join</button>
-    </div>
-  </div>
-  </form>
-  
-  
-  <div class="features">
+    </form>
 
-  
-    <div class="content">
+    <div class="features">
+      <div class="content">
         <div class="page1">
-            <i class="fas fa-2x fa-volume-up"></i>
+          <i class="fas fa-2x fa-volume-up"></i>
         </div>
         <div class="page2">
-            <h3>Talk</h3>
-            <p>Share your screen, application window, present your documents, slides and more.</p>
+          <h3>Talk</h3>
+          <p>
+            Share your screen, application window, present your documents,
+            slides and more.
+          </p>
         </div>
-    </div>
-    <div class="content1">
+      </div>
+      <div class="content1">
         <div class="page1">
-        <i class="fas fa-2x fa-headphones"></i>
+          <i class="fas fa-2x fa-headphones"></i>
         </div>
         <div class="page2">
-        <h3>Listen</h3>
-        <p>Record your Screen, WebCam and Audio. Save it for use it in future or to share with others.</p>
+          <h3>Listen</h3>
+          <p>
+            Record your Screen, WebCam and Audio. Save it for use it in future
+            or to share with others.
+          </p>
         </div>
-    </div>
-    <div class="content2">
+      </div>
+      <div class="content2">
         <div class="page1">
-        <i class="fas fa-2x fa-desktop"></i>
+          <i class="fas fa-2x fa-desktop"></i>
         </div>
         <div class="page2">
-        <h3>Screen</h3>
-        <p>Share any types of files to all participants in the meeting, in total security, thanks to (DTLS).</p>
+          <h3>Screen</h3>
+          <p>
+            Share any types of files to all participants in the meeting, in
+            total security, thanks to (DTLS).
+          </p>
         </div>
-    </div>
-    <div class="content3">
+      </div>
+      <div class="content3">
         <div class="page1">
-            <i class="fas fa-2x fa-video"></i>
+          <i class="fas fa-2x fa-video"></i>
         </div>
         <div class="page2">
-        <h3>Video</h3>
-        <p>Record your Screen, WebCam and Audio. Save it for use it in future or to share with others.</p>
+          <h3>Video</h3>
+          <p>
+            Record your Screen, WebCam and Audio. Save it for use it in future
+            or to share with others.
+          </p>
         </div>
-    </div>
-    <div class="content4">
+      </div>
+      <div class="content4">
         <div class="page1">
-        <i class="fas fa-2x fa-comments"></i>
+          <i class="fas fa-2x fa-comments"></i>
         </div>
         <div class="page2">
-        <h3>Chat</h3>
-        <p>Record your Screen, WebCam and Audio. Save it for use it in future or to share with others.</p>
+          <h3>Chat</h3>
+          <p>
+            Record your Screen, WebCam and Audio. Save it for use it in future
+            or to share with others.
+          </p>
         </div>
-    </div>
-    <div class="content5">
+      </div>
+      <div class="content5">
         <div class="page1">
-        <i class="fas  fa-2x fa-chalkboard"></i>
+          <i class="fas fa-2x fa-chalkboard"></i>
         </div>
         <div class="page2">
-        <h3>Whiteboard</h3>
-        <p>Record your Screen, WebCam and Audio. Save it for use it in future or to share with others.</p>
+          <h3>Whiteboard</h3>
+          <p>
+            Record your Screen, WebCam and Audio. Save it for use it in future
+            or to share with others.
+          </p>
         </div>
+      </div>
     </div>
-</div>
-</body>
+  </body>
+</html>

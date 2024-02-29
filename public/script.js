@@ -25,10 +25,9 @@ const chat = document.getElementById("chat");
 OtherUsername = "";
 // chat.hidden = true;
 
-
 sendmessage = (text) => {
   if (event.key === "Enter" && text.value != "") {
-    socket.emit("messagesend", myname + ' : ' + text.value);
+    socket.emit("messagesend", myname + " : " + text.value);
     text.value = "";
     main__chat_window.scrollTop = main__chat_window.scrollHeight;
   }
@@ -39,13 +38,12 @@ function copyroomID() {
   /* Get the text field */
   var copyText = document.getElementById("room_ID");
   copyText.select();
-  copyText.setSelectionRange(0, 99999); 
+  copyText.setSelectionRange(0, 99999);
 
   navigator.clipboard.writeText(copyText.value);
 
   alert("Copied the text: " + copyText.value);
 }
-
 
 //codeMIrror is used to give editor feel
 //fromTextArea method helps us to get text from textarea box in which we write code
@@ -127,7 +125,6 @@ socket.on("code", (data) => {
   codeArea.getDoc().setValue(data);
 });
 
-
 //here we catch inpmsg event which is emitted above
 //all sockets connected to the client will catch this event
 socket.on("inpmsg", (data) => {
@@ -162,7 +159,6 @@ const showchat = () => {
     chat.hidden = false;
   }
 };
-
 
 //************************************* connect to new user function **********************************************/
 function connectToNewUser(userId, stream) {
@@ -208,7 +204,7 @@ function connectToNewUser(userId, stream) {
     conn.send({
       userid: myid,
       name: myname,
-      muted: false
+      muted: false,
     });
   });
 }
@@ -242,7 +238,7 @@ myPeer.on("connection", function (conn) {
     conn.send({
       userid: myid,
       name: myname,
-      muted: false
+      muted: false,
     });
   });
 });
@@ -295,12 +291,12 @@ const setMuteButton = () => {
   if (conn) {
     conn.send({
       userid: myid,
-      muted: false
+      muted: false,
     });
   } else {
     clientconn.send({
       userid: myid,
-      muted: false
+      muted: false,
     });
   }
 };
@@ -322,12 +318,12 @@ const setUnmuteButton = () => {
   if (conn) {
     conn.send({
       userid: myid,
-      muted: true
+      muted: true,
     });
   } else {
     clientconn.send({
       userid: myid,
-      muted: true
+      muted: true,
     });
   }
 };
@@ -363,3 +359,30 @@ const setvideomutedtext = (videodiv, muted, id) => {
     div.remove();
   }
 };
+
+// chat box code
+
+const messagesContainer = document.getElementById("messages");
+const messageInput = document.getElementById("messageInput");
+const sendButton = document.getElementById("sendButton");
+
+sendButton.addEventListener("click", sendMessage);
+messageInput.addEventListener("keypress", function (e) {
+  if (e.key === "Enter") {
+    sendMessage();
+  }
+});
+
+function sendMessage() {
+  const message = messageInput.value.trim();
+  if (message !== "") {
+    const messageElement = document.createElement("div");
+    messageElement.textContent = message;
+    messageElement.classList.add("message", "sender");
+    messagesContainer.appendChild(messageElement);
+    // Scroll to the bottom of the messages
+    messagesContainer.scrollTop = messagesContainer.scrollHeight;
+    // Clear the input field
+    messageInput.value = "";
+  }
+}
