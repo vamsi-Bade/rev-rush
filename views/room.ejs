@@ -87,14 +87,18 @@
     <div class="main">
       <div class="main__left">
         <div class="main__area">
+          <select id="languageSelector" onchange="changeIframe()">
+            <option value="java">Java</option>
+            <option value="python">Python</option>
+            <option value="c++">C++</option>
+          </select>
+
           <iframe
-            src="https://trinket.io/embed/java/02ba06c29a"
+            id="myIframe"
             width="100%"
-            height="356"
+            height="400"
+            src="https://trinket.io/embed/java/02ba06c29a"
             frameborder="0"
-            marginwidth="0"
-            marginheight="0"
-            allowfullscreen
           ></iframe>
         </div>
         <div class="main__controls">
@@ -122,6 +126,9 @@
       </div>
 
       <div class="main__right">
+        <div id="video-container">
+          <video id="video" autoplay playsinline></video>
+        </div>
         <div id="video-container">
           <video id="video" autoplay playsinline></video>
         </div>
@@ -188,6 +195,18 @@
       function run() {
         let sourceCode = document.getElementById("code");
         console.log(sourceCode.value);
+      }
+      function changeIframe() {
+        var language = document.getElementById("languageSelector").value;
+        var iframe = document.getElementById("myIframe");
+        if (language === "java") {
+          iframe.src = "https://trinket.io/embed/java/02ba06c29a";
+        } else if (language === "python") {
+          iframe.src = "https://trinket.io/embed/python3/0f78dd96c0";
+        } else if (language === "c++") {
+          iframe.src =
+            "https://www.programiz.com/cpp-programming/online-compiler/";
+        }
       }
     </script>
   </body>
